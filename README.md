@@ -1,4 +1,4 @@
 # chrome 下用到rem
-<a href="/Blog/html5/rem.md">oops</a>
+<a href="/html5/rem.md">oops</a>
 
 
