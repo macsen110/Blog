@@ -17,8 +17,22 @@ DTD(Document Type Definition) 声明以 <!DOCTYPE> 开始，不区分大小写�
 
 * HTML 4.01 Frameset
 
-><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+  ><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 
 *最新 HTML5 推出更加简洁的书写，它向前向后兼容，推荐使用。
 
   ><!doctype html>
+
+在 HTML中 doctype 有两个主要目的。
+
+1. 对文档进行有效性验证.
+	它告诉用户代理和校验器这个文档是按照什么 DTD 写的。这个动作是被动的，每次页面加载时，浏览器并不会下载 DTD 并检查合法性，只有当手动校验页面时才启用。
+
+2. 决定浏览器的呈现模式
+	对于实际操作，通知浏览器读取文档时用哪种解析算法。如果没有写，则浏览器则根据自身的规则对代码进行解析，可能会严重影响 html 排版布局。浏览器有三种方式解析 HTML 文档。
+	
+    + 非怪异（标准）模式
+    + 怪异模式
+    + 部分怪异（近乎标准）模式 关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE 标签，可详细阅读模式？标准！的内容。
+
+
