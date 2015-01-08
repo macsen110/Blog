@@ -19,7 +19,7 @@ DTD(Document Type Definition) 声明以 <!DOCTYPE> 开始，不区分大小写�
 
   ><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 
-*最新 HTML5 推出更加简洁的书写，它向前向后兼容，推荐使用。
+* 最新 HTML5 推出更加简洁的书写，它向前向后兼容，推荐使用。
 
   ><!doctype html>
 
@@ -40,13 +40,13 @@ DTD(Document Type Definition) 声明以 <!DOCTYPE> 开始，不区分大小写�
 声明文档使用的字符编码，
 * <meta charset="utf-8">
 html5之前会这样写
-><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+*<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 ### lang属性
 
 简体中文
 
-><html lang="zh-cmn-Hans">
+*<html lang="zh-cmn-Hans">
 
 
 
