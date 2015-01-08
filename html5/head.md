@@ -74,7 +74,7 @@ html5之前会这样写
 + 页面标题
 	<title>标签(head 头部必须)
 
-	`<title>your title</title>`
+		`<title>your title</title>`
 
 	
 
