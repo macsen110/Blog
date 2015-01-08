@@ -143,6 +143,43 @@ content 参数：
 
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <!-- 设置状态栏的背景颜色，只有在 `"apple-mobile-web-app-capable" content="yes"` 时生效 -->
 
+只有在 "apple-mobile-web-app-capable" content="yes" 时生效
 
+content 参数：
+
+    * default 默认值。
+    * black 状态栏背景是黑色。
+    * black-translucent 状态栏背景是黑色半透明。 如果设置为 default 或 black,网页内容从状态栏底部开始。 如果设置为 black-translucent ,网页内容充满整个屏幕，顶部会被状态栏遮挡。
+
+禁止数字识自动别为电话号码
+
+	<meta name="format-detection" content="telephone=no" /> <!-- 禁止数字识自动别为电话号码 -->
+
+##iOS 图标
+
+rel 参数： apple-touch-icon 图片自动处理成圆角和高光等效果。 apple-touch-icon-precomposed 禁止系统自动添加效果，直接显示设计原图。 iPhone 和 iTouch，默认 57x57 像素，必须有
+
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone 和 iTouch，默认 57x57 像素，必须有 -->
+
+iPad，72x72 像素，可以没有，但推荐有
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png" /> <!-- iPad，72x72 像素，可以没有，但推荐有 -->
+
+Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有
+
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png" /> <!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 -->
+
+
+Retina iPad，144x144 像素，可以没有，但推荐有
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png" /> <!-- Retina iPad，144x144 像素，可以没有，但推荐有 -->
+
+IOS 图标大小在iPhone 6 plus上是180×180，iPhone 6 是120x120。 适配iPhone 6 plus，则需要在中加上这段
+
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="retinahd_icon.png">
+	
+###iOS 启动画面
+
+官方文档：[https://developer.apple.com/library/ios/qa/qa1686/_index.html](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
 
 
