@@ -96,7 +96,23 @@ html5之前会这样写
 		<meta name="robots" content="index,follow">
 	
 
+###viewport
 
+viewport 可以让布局在移动浏览器上显示的更好。 通常会写
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+width=device-width 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边(http://bigc.at/ios-webapp-viewport-meta.orz)
+
+content 参数：
+
+1. width viewport 宽度(数值/device-width)
+2. height viewport 高度(数值/device-height)
+3. initial-scale 初始缩放比例
+4. maximum-scale 最大缩放比例
+5. minimum-scale 最小缩放比例
+6. user-scalable 是否允许用户缩放(yes/no)
+7. minimal-ui iOS 7.1 beta2中新增属性，可以在页面加载时最小化上下状态栏。这是一个布尔值，可以直接这样写：
 
 
 
