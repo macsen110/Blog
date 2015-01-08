@@ -114,5 +114,20 @@ content 参数：
 6. user-scalable 是否允许用户缩放(yes/no)
 7. minimal-ui iOS 7.1 beta2中新增属性，可以在页面加载时最小化上下状态栏。这是一个布尔值，可以直接这样写：
 
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	
+而如果你的网站不是响应式的，请不要使用 initial-scale 或者禁用缩放。
+
+	<meta name="viewport" content="width=device-width,user-scalable=yes">
+
+相关链接：[非响应式设计的viewport](http://www.qianduan.net/non-responsive-design-viewport.html)
+
+适配 iPhone 6 和 iPhone 6plus 则需要写：
+
+	<meta name="viewport" content="width=375">
+	<meta name="viewport" content="width=414">
+
+
+
 
 
