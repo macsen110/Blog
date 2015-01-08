@@ -72,10 +72,28 @@ html5之前会这样写
 	
 ###SEO 优化部分
 + 页面标题
+
 	<title>标签(head 头部必须)
+	
 
-		`<title>your title</title>`
+		<title>your title</title>
++ 页面关键词 keywords
+	
 
+		<meta name="keywords" content="your keywords">
++ 页面描述内容 description
+
+
+		<meta name="description" content="your description">
++ 定义网页作者 author
+
+	
+		<meta name="author" content="author,email address">
+
++ 定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。
+
+	
+		<meta name="robots" content="index,follow">
 	
 
 
