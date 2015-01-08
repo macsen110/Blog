@@ -59,6 +59,7 @@ html5之前会这样写
 ###360 使用Google Chrome Frame
 	<meta name="renderer" content="webkit">
 360 浏览器就会在读取到这个标签后，立即切换对应的极速核。 另外为了保险起见再加入
+
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
 
