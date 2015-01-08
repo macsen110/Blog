@@ -127,6 +127,21 @@ content 参数：
 	<meta name="viewport" content="width=375">
 	<meta name="viewport" content="width=414">
 
+大部分 4.7~5 寸的安卓设备的 viewport 宽设为 360px，iPhone 6 上却是 375px，大部分 5.5 寸安卓机器（比如说三星 Note）的 viewport 宽为 400，iPhone 6 plus 上是 414px。
+
+###ios 设备
+
+添加到主屏后的标题（iOS 6 新增）
+
+	<meta name="apple-mobile-web-app-title" content="标题"> <!-- 添加到主屏后的标题（iOS 6 新增） -->
+
+是否启用 WebApp 全屏模式
+
+	<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 是否启用 WebApp 全屏模式 -->
+
+设置状态栏的背景颜色
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <!-- 设置状态栏的背景颜色，只有在 `"apple-mobile-web-app-capable" content="yes"` 时生效 -->
 
 
 
