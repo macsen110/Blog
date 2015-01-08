@@ -36,10 +36,12 @@ DTD(Document Type Definition) 声明以 <!DOCTYPE> 开始，不区分大小写�
     + 部分怪异（近乎标准）模式 关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE 标签，可详细阅读模式？标准！的内容。
 
 ### charset
+声明文档使用的字符编码
 
-声明文档使用的字符编码，
+
 	<meta charset="utf-8">
 html5之前会这样写
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 ### lang属性
 简体中文
