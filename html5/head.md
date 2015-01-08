@@ -40,6 +40,7 @@ DTD(Document Type Definition) 声明以 <!DOCTYPE> 开始，不区分大小写�
 声明文档使用的字符编码，
 * <meta charset="utf-8">
 html5之前会这样写
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 ### lang属性
