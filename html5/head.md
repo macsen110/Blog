@@ -183,3 +183,67 @@ IOS 图标大小在iPhone 6 plus上是180×180，iPhone 6 是120x120。 适配iP
 官方文档：[https://developer.apple.com/library/ios/qa/qa1686/_index.html](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
 
 
+iPad 的启动画面是不包括状态栏区域的。
+
+iPad 竖屏 768 x 1004（标准分辨率）
+
+	<link rel="apple-touch-startup-image" sizes="768x1004" href="/splash-screen-768x1004.png" /> <!-- iPad 竖屏 768 x 1004（标准分辨率） -->
+
+iPad 竖屏 1536x2008（Retina）
+
+	<link rel="apple-touch-startup-image" sizes="1536x2008" href="/splash-screen-1536x2008.png" /> <!-- iPad 竖屏 1536x2008（Retina） -->
+
+iPad 横屏 1024x748（标准分辨率）
+
+	<link rel="apple-touch-startup-image" sizes="1024x748" href="/Default-Portrait-1024x748.png" /> <!-- iPad 横屏 1024x748（标准分辨率） -->
+
+iPad 横屏 2048x1496（Retina）
+
+	<link rel="apple-touch-startup-image" sizes="2048x1496" href="/splash-screen-2048x1496.png" /> <!-- iPad 横屏 2048x1496（Retina） -->
+
+iPhone 和 iPod touch 的启动画面是包含状态栏区域的。
+
+iPhone/iPod Touch 竖屏 320x480 (标准分辨率)
+
+	<link rel="apple-touch-startup-image" href="/splash-screen-320x480.png" /> <!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) -->
+
+iPhone/iPod Touch 竖屏 640x960 (Retina)
+
+	<link rel="apple-touch-startup-image" sizes="640x960" href="/splash-screen-640x960.png" /> <!-- iPhone/iPod Touch 竖屏 640x960 (Retina) -->
+
+iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina)
+
+	<link rel="apple-touch-startup-image" sizes="640x1136" href="/splash-screen-640x1136.png" /> <!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) -->
+
+添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）
+
+	<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"> <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+
+iPhone 6对应的图片大小是750×1294，iPhone 6 Plus 对应的是1242×2148 。
+
+	<link rel="apple-touch-startup-image" href="launch6.png" media="(device-width: 375px)">
+
+	<link rel="apple-touch-startup-image" href="launch6plus.png" media="(device-width: 414px)">
+
+
+###Windows 8
+
+Windows 8 磁贴颜色
+
+	<meta name="msapplication-TileColor" content="#000"/> <!-- Windows 8 磁贴颜色 -->
+
+Windows 8 磁贴图标
+
+	<meta name="msapplication-TileImage" content="icon.png"/> <!-- Windows 8 磁贴图标 -->
+
+rss订阅
+
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" /> <!-- 添加 RSS 订阅 -->
+
+favicon icon
+
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" /> <!-- 添加 favicon icon -->
+
+
+
+
