@@ -22,8 +22,33 @@
 	在下面这个示例中,使用:has和:not结合在一起选择不包含段落p的li元素：
 
 		li:not(:has(p)) { padding-bottom: 1em; }
-4. d
+4. 匹配任何伪类:matches
 
+	这个伪类意味着，可以将规则应用到一个组合选择器中，如：
+
+		p:matches(.alert, .error, .warn) { color: red; }
+
+	带有只要元素带<p>带有.alert、.error和.warn中任何一个类名，文本颜色都将会是red。
+
+	你可以在[css4-selectors.com]('css4-selectors.com')网站上测试你的浏览器是否支持这些CSS4选择器。这也是一个资源网站，你可以在这个站上找到将要添加的选择器。
+
+##CSS混合模式
+
+如果你熟悉在Photoshop中使用图层混合模式，那么你可能会对CSS的混合模式和规范感兴趣。该规范可以将混合模式的背景适用于任何HTML元素。
+
+在下面的CSS中我们一个运用了背景图像的盒子。通过添加一个背景颜色background-color，然后设置background-blend-mode的值为hue和multiply，可以看到神奇的效果。
+
+	.box {
+	  background-image: url(balloons.jpg);
+	}
+	.box2 {
+	  background-color: red;
+	  background-blend-mode: hue;
+	}
+	.box3 {
+	  background-color: blue;
+	  background-blend-mode: multiply;
+	}
 
 
 
