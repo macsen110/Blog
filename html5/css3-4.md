@@ -19,7 +19,7 @@
 
 		a:has( > img ) { border: 1px solid #000; }
 
-	在下面这个示例中,使用:has和:not结合在一起选择不包含段落<p>的<li>元素：
+	在下面这个示例中,使用:has和:not结合在一起选择不包含段落p的li元素：
 
 		li:not(:has(p)) { padding-bottom: 1em; }
 4. d
