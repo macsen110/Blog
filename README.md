@@ -8,6 +8,14 @@
 <ul>
 <li><a href="js/js.md">js不完善记忆</a></li>
 </ul>
+##Jquery
+<ul>
+<li><a href="js/jq.md">Jquery</a></li>
+</ul>
+##AngularJs
+<ul>
+<li><a href="js/ng.md">AngularJs</a></li>
+</ul>
 ###Nodejs
 <ul>
 <li><a href="node/grunt.md">grunt的纠结使用</a></li>
