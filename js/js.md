@@ -17,16 +17,16 @@ js中所有变量都是对象,除了null和underfined
 * 函数赋值表达式
     var foo = function() {};
 
-这个例子把一个匿名的函数赋值给变量 foo。
+  这个例子把一个匿名的函数赋值给变量 foo。
 
-foo; // 'undefined'
-foo(); // 出错：TypeError
-var foo = function() {};
+  foo; // 'undefined'
+  foo(); // 出错：TypeError
+  var foo = function() {};
 
-由于 var 定义了一个声明语句，对变量 foo 的解析是在代码运行之前，因此 foo 变量在代码运行时已经被定义过了。
+    由于 var 定义了一个声明语句，对变量 foo 的解析是在代码运行之前，因此 foo 变量在代码运行时已经被定义过了。
 
-但是由于赋值语句只在运行时执行，因此在相应代码执行之前， foo 的值缺省为 undefined。
-命名函数的赋值表达式
+    但是由于赋值语句只在运行时执行，因此在相应代码执行之前， foo 的值缺省为 undefined。
+    命名函数的赋值表达式
 
 * 另外一个特殊的情况是将命名函数赋值给一个变量。
 
