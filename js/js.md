@@ -1,12 +1,15 @@
-##写点js吧
+## 写点js吧 
 
-###对象
+对象 
+===
 js中所有变量都是对象,除了null和underfined
+---------------
 
   * 2.toString()会报错,操作符.会被当成浮点数的符号,改为(2).toString();
   * for in 访问一个对象,原型链上的所有属性都将被访问
 
-###函数,js的一等对象,
+函数,js的一等对象 
+------------
 
 这意味着可以把函数像其它值一样传递。 一个常见的用法是把匿名函数作为回调函数传递到异步函数中。
 
@@ -38,39 +41,38 @@ js中所有变量都是对象,除了null和underfined
   bar 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo； 然而在 bar 内部依然可见。这是由于 JavaScript 的 命名处理      所致， *函数名在函数内总是可见的*。
   
  
- ###this 的工作原理
+ ### this 的工作原理 ###
 
 JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 在五种不同的情况下 ，this 指向的各不相同。
 
 
-1. 全局范围内
-                this;
+1. 全局范围内 this;
 
         当在全部范围内使用 this，它将会指向全局对象。浏览器中运行的 JavaScript 脚本，这个全局对象是 window。
 
 2. 函数调用
 
-                foo();
+        foo();
 
         这里 this 也会指向全局对象。在严格模式下（strict mode），不存在全局变量。 这种情况下 this 将会是 undefined。
         
 3. 方法调用
 
-                test.foo(); 
+        test.foo(); 
         这个例子中，this 指向 test 对象。
 
 4. 调用构造函数
 
-                new foo(); 
+        new foo(); 
 
         如果函数倾向于和 new 关键词一块使用，则我们称这个函数是 构造函数。 在函数内部，this 指向新创建的对象。
         显式的设置 this
 
-                function foo(a, b, c) {}
+        function foo(a, b, c) {}
 
-                var bar = {};
-                foo.apply(bar, [1, 2, 3]); // 数组将会被扩展，如下所示
-                foo.call(bar, 1, 2, 3); // 传递到foo的参数是：a = 1, b = 2, c = 3
+        var bar = {};
+        foo.apply(bar, [1, 2, 3]); // 数组将会被扩展，如下所示
+        foo.call(bar, 1, 2, 3); // 传递到foo的参数是：a = 1, b = 2, c = 3
 
         当使用 Function.prototype 上的 call 或者 apply 方法时，函数内的 this 将会被 显式设置为函数调用的第一个参数。
 
@@ -82,20 +84,32 @@ JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 �
 
 
 
-###作用域与命名空间
+作用域与命名空间 
+---
 
 尽管 JavaScript 支持一对花括号创建的代码段，但是并不支持块级作用域； 而仅仅支持 函数作用域。
 
-  function test() { // 一个作用域
-      for(var i = 0; i < 10; i++) { // 不是一个作用域
-          // count
-      }
-      console.log(i); // 10
-  }
+    function test() { // 一个作用域
+        for(var i = 0; i < 10; i++) { // 不是一个作用域
+            // count
+        }
+        console.log(i); // 10
+    }
 
 
   
+window.URL.createObjectURL与FileReader
+---
+<blink>Returns a DOMString containing a unique blob URL, that is a URL with blob: as its scheme, followed by an opaque string uniquely identifying the object in the browser.</blink>
 
-  
+The FileReader object lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.
+
+    备注: URL.createObjectURL 返回值跟应用所在协议有关,files//或者http比方说在本地环境下生成的图片格式不能用在http环境下,而用FileReader.readAsDataURL() 则没有这个问题
+
+    另外,使用URL.createObjectURL以后最好记得使用URL.revokeObjectURL()释放内存
+
+
+
+
 
 
