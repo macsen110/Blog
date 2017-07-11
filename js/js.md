@@ -109,7 +109,16 @@ The FileReader object lets web applications asynchronously read the contents of 
     另外,使用URL.createObjectURL以后最好记得使用URL.revokeObjectURL()释放内存
 
 
+## import 与script便签引入js的区别 ##
 
+> import 在js文件中会使得提升到顶级处理,有点类似于函数体的变量提升，就是
+    
+    window.a = 110;
+    import obj from './obj.js';
+    会优先执行下面的语句
+    obj.js中声明的全局变量都不会暴露出来
+    export 导出的变量或者是函数在其他文件中import到,都是只读的,不能覆盖,重置
 
+> script标签中声明的全局变量会在下一个script js中被读取到
 
 
