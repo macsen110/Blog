@@ -1,8 +1,8 @@
 # 前端遇到的坑
 ### html,css,移动端展现篇 ###
 
-1.  [rem 使用情况分析](./issues/1)
-2.  [标签head总结](./issues/2)
+1.  [rem 使用情况分析](../issues/1)
+2.  [标签head总结](../issues/2)
 
 
 ### ECMAscript ###
