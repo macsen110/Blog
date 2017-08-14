@@ -10,13 +10,28 @@ fetch 请求添加
     credentials: 'include',
 
 
-cors ajax 跨域请求时,需要添加
+cors ajax 跨域请求时,需要添加(包括fetch)
 
     xhrFiles {
         withCredentials: true
     },
     crossDomain: true
 
+
+后端处理
+
+res.header("Access-Control-Allow-Origin", "http://10.6.26.38:9001");
+res.header("Access-Control-Allow-Credentials", true);
+
+或者
+
+nginx 上添加
+
+            add_header Access-Control-Allow-Origin http://10.6.26.38:9002;
+            add_header Access-Control-Allow-Credentials true;
+
+本质上 Access-Control-Allow-Origin * 代表跨域允许,但是要通过客户端传cookie到后端,
+是需要有一个指定的地址和端口号
 
 二. Ajax 以及表单提交(浏览器提交支持的数据格式)
 ---

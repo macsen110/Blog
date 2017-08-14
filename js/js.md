@@ -122,3 +122,10 @@ The FileReader object lets web applications asynchronously read the contents of 
 > script标签中声明的全局变量会在下一个script js中被读取到
 
 
+# Promise
+
+new Promise中如果不显示指定reject方法, throw new Errow 会被catch 方法获取到
+
+
+
+
