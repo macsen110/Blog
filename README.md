@@ -3,8 +3,8 @@
 
 1.  [rem 使用情况分析](../../issues/2)
 2.  [标签head总结](../../issues/4)
-3.  [css使用姿势](../../issiues/3)
-4.  [web页面技巧](../../issiue/5)
+3.  [css使用姿势](../../issues/3)
+4.  [web页面技巧](../../issues/5)
 
 ### ECMAscript 
 
