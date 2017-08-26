@@ -1,9 +1,9 @@
 # 前端遇到的坑
 ### html,css,移动端展现篇 ###
 
-1.  [rem 使用情况分析](../../../issues/2)
-2.  [标签head总结](../../../issues/2)
-3.  [css使用姿势](.../../../issiue/3)
+1.  [rem 使用情况分析](../../issues/2)
+2.  [标签head总结](../../issues/4)
+3.  [css使用姿势](../../issiue/3)
 
 ### ECMAscript ###
 <ul>
