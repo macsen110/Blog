@@ -1,6 +1,6 @@
-## web开发中碰到的一些东西 ##
+## web 开发实战技巧 ##
 
-一. input 标签上传图片会造成浏览器卡顿,主要原因是 accpet = "image/*" 所致,
+一. input 标签上传图片会造成浏览器卡顿,主要原因是 accpet = "image/*" 所致,
 
 当chrome 监听到有图片上传来时会连接到chrome来监听判断, 本质上上因为翻墙所导致的
 
@@ -37,13 +37,13 @@
     });
 
 
->三. retina屏幕下的 1px问题
+>三. retina屏幕下的 1px问题
 
 1. ios8下面使用 0.5px
 
 2. 使用border-image
 
-3. 使用viewport + rem,类似于阿里flex库(详见yao-m-ui下的flexable)
+3. 使用viewport + rem,类似于阿里flex库(详见yao-m-ui下的flexable)
 
 4. background: -webkit-gradient(linear, left top, left bottom, color-stop(.5, transparent), color-stop(.5, #c8c7cc), to(#c8c7cc)) left bottom repeat-x;
 

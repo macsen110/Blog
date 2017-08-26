@@ -72,6 +72,6 @@ ps：一个表单有文件上传,最好使用form-data格式
 
 * text/xml XML
 
-请求题为xml
+请求体为xml
 
 
