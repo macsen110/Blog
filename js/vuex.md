@@ -10,7 +10,7 @@
 
 
 
-2.组件中使用mutations
+2. 组件中使用mutations
 
     ...mapMutations([
           'increment' // 映射 this.increment() 为 this.$store.commit('increment')
@@ -19,7 +19,7 @@
           add: 'increment' // 映射 this.add() 为 this.$store.commit('increment')
     })
 
-3.组件中使用actions
+3. 组件中使用actions
 
     ...mapActions([
       'increment' // 映射 this.increment() 为 this.$store.dispatch('increment')
@@ -71,7 +71,7 @@
 
 > 一个 store.dispatch 在不同模块中可以触发多个 action 函数。在这种情况下，只有当所有触发函数完成后，返回的 Promise 才会执行。(本质是同步和异步区别)
 
-5.getters
+5. getters
 
 > 有时候我们需要从 store 中的 state 中派生出一些状态, Vuex 允许我们在 store 中定义『getters』（可以认为是 store 的计算属性）
 
@@ -115,7 +115,7 @@
 
 >mapGetters 辅助函数仅仅是将 store 中的 getters 映射到局部计算属性,也可以别名映射
 
-6.state
+6. state
 
 > Vuex 使用 单一状态树 —— 是的，用一个对象就包含了全部的应用层级状态。至此它便作为一个『唯一数据源(SSOT)』而存在。这也意味着，每个应用将仅仅包含一个 store 实例。 mapState 辅助函数使用 mapState 辅助函数帮助我们生成计算属性
 
@@ -203,14 +203,14 @@ Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自�
 
 对于模块内部的 getter，根节点状态会作为第三个参数暴露出来：
 
-  const moduleA = {
-    // ...
-    getters: {
-      sumWithRootCount (state, getters, rootState) {
-        return state.count + rootState.count
+    const moduleA = {
+      // ...
+      getters: {
+        sumWithRootCount (state, getters, rootState) {
+          return state.count + rootState.count
+        }
       }
     }
-  }
 
 
 具体请看  http://vuex.vuejs.org/zh-cn/modules.html

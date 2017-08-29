@@ -9,19 +9,21 @@
 ### ECMAscript 
 
 1. [js 笔记](../../issues/6)
-2. [nodejs 使用]()
-3. [vue && vuex]()
-4. [react && redux]()
-5. [js中模块化]()
+2. [nodejs 使用](../../issues/7)
+3. [vue](../../issues/8)
+4. [vuex](../../issues/9)
+5. [react](../../issues/10)
+6. [redux](../../issues/11)
+7. [js模块化](../../issues/12)
 
 ### 
 
 
 ### tools
 
-1. [git 常用命令]()
-2. [npm 使用]()
-3. [nginx]()
+1. [git 常用命令](../../issues/13)
+2. [npm 使用](../../issues/14)
+3. [nginx](../../issues/15)
 
 
 @copyright
