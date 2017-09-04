@@ -127,5 +127,10 @@ The FileReader object lets web applications asynchronously read the contents of 
 new Promise中如果不显示指定reject方法, throw new Errow 会被catch 方法获取到
 
 
+# js tips
+
+
+
+
 
 

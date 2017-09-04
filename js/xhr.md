@@ -1,6 +1,11 @@
 一. Ajax 请求中携带cookie解决
 ----
 
+> 同源就是指URL中protocol协议、host域名、port端口这三个部分相同。简单来说，同源策略就是浏览器出于网站安全性的考虑，限制不同源之间的资源相互访问的一种政策.有些请求是不受到跨域限制。例如：WebSocket，script、img、iframe、video、audio标签的src属性等
+
+
+
+
 前端进行数据请求中有: 普通ajax 请求, jsonp跨域请求, cors ajax跨域请求, fetch请求等
 
 普通ajax请求和jsonp跨域请求默认都是携带cookie的，而fetch和cors ajax跨域请求默认不携带cookie
@@ -27,11 +32,54 @@ res.header("Access-Control-Allow-Credentials", true);
 
 nginx 上添加
 
-            add_header Access-Control-Allow-Origin http://10.6.26.38:9002;
-            add_header Access-Control-Allow-Credentials true;
+    add_header Access-Control-Allow-Origin http://10.6.26.38:9002;
+    add_header Access-Control-Allow-Credentials true;
 
 本质上 Access-Control-Allow-Origin * 代表跨域允许,但是要通过客户端传cookie到后端,
 是需要有一个指定的地址和端口号
+
+jsonp
+
+> jsonp是跨域领域中历史非常传统的一种方法。如果你还记得第一部分中我们提到过的内容，一些跨域请求是不会受到同源政策的限制的。其中，script标签就是一个。
+
+>
+
+* 在script标签中我们可以引用其他服务上的脚本，最常见的场景就是CDN。因此，有人想到，当有跨域请求到来时，如果我们可以把客户端需要的数据写到javascript脚本文件中并返回给客户端，那么客户端就可以拿到这些数据并使用了。具体是怎样一个流程呢？
+
+* 首先，在myweb端，我们可以预先定义一个处理函数，叫它callback；
+* 然后，在myweb端，我们动态创建一个script标签，并将该标签的src属性指向跨域的接口，并将callback函数名作为请求的参数；
+* 跨域的thirdparty端接受到该请求后，返回一个javascript脚本文件，用callback函数包裹住数据；
+* 这时候，前端收到响应数据会自动执行该脚本，这样便会自动执行预先定义的callback函数。
+
+such as 
+
+```
+// myweb 部分
+// 1. 创建回调函数callback
+function myCallback(res) {
+    alert(JSON.stringify(res, null , 2));
+}
+document.getElementById('btn-4').addEventListener('click', function() {
+    // 2. 动态创建script标签，并设置src属性，注意参数cb=myCallback
+    var script = document.createElement('script');
+    script.src = 'http://127.0.0.1:3000/info/jsonp?cb=myCallback';
+    document.getElementsByTagName('head')[0].appendChild(script);
+});
+
+```
+```
+// thirdparty
+router.get('/jsonp', (req, res, next) => {
+    var str = JSON.stringify(data);
+    // 3. 创建script脚本内容，用`callback`函数包裹住数据
+    // 形式：callback(data)
+    var script = `${req.query.cb}(${str})`;
+    res.send(script);
+});
+// 4. 前端收到响应数据会自动执行该脚本
+
+```
+
 
 二. Ajax 以及表单提交(浏览器提交支持的数据格式)
 ---

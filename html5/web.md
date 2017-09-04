@@ -51,3 +51,5 @@
 
 四. Mutation Observer可以实时监听target dom变化, 有回调函数,场景例如
 1.启动页fullpage
+
+五. 检测手机横屏竖屏
