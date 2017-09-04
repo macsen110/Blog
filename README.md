@@ -6,15 +6,19 @@
 3.  [css使用姿势](../../issues/3)
 4.  [web页面技巧](../../issues/5)
 
+
 ### ECMAscript 
 
 1. [js 笔记](../../issues/6)
 2. [nodejs 使用](../../issues/7)
 3. [vue](../../issues/8)
 4. [vuex](../../issues/9)
-5. [react](../../issues/10)
-6. [redux](../../issues/11)
-7. [js模块化](../../issues/12)
+5. [js 设计模式](../../issues/10)
+6. [react](../../issues/10)
+7. [redux](../../issues/11)
+8. [js模块化](../../issues/13)
+9. [xhr](../../issues/11)
+10. [js 面向对象开发](../../issues/12)
 
 ### 
 
