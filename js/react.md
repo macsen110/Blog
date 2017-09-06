@@ -177,5 +177,5 @@ export default class Root extends Component {
 所以 整个的目录类似于
 
 >
-![react目录](https://github.com/macsen110/Blog/image/redux.png)
+![react目](https://raw.githubusercontent.com/macsen110/Blog/master/image/redux.png)
 >

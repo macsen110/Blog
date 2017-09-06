@@ -23,7 +23,7 @@
 9. [js 面向对象开发](../../issues/12)
 ### nodeJs
 
-1. [nodeJs Note](../../16)
+1. [nodeJs Note](../../issues/16)
 
 
 
