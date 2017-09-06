@@ -131,6 +131,251 @@ new Promise中如果不显示指定reject方法, throw new Errow 会被catch 方
 
 
 
+* 单元运算符 + 也可以把数字字符串转换成数值：+ ‘222’ //222
+* num + ''可以转换成字符串
+* !! 可以换布尔值
+* [Variables//类数组]可以转换为数组
+* replace 参数理解
+* div.innertext=div.innertext,去除html标签，
+
+```
+var a = {n:1}
+var b =a
+a.x = a = {n:2}
+a.x //undefined;
+b.x //{n:2}
+
+```
+
+* document.currentScript;获取当前执行的script标签元素,
+
+也可以用
+```
+var arrScripts = document.getElementsByTagName('script');
+var strScriptTagId = arrScripts[arrScripts.length - 1].dataSet.id;
+```
+* js. splite还有第二个参数，limiter,限制分割数组的长度
 
 
+js文件本身的编码问题,如果不是utf-8的话,会有影响中文返回值,特别是nodejs http response里面,所以特别注意
 
+项目文件里面编码都要统一设置,必须设置
+
+方法内部的函数（Functions inside a method）
+每个函数都有一个特殊变量this。如果你在方法内部嵌入函数是很不方便的，因为你不能从函数中访问方法的this。
+```
+var jane = {
+    name: 'Jane',
+    friends: [ 'Tarzan', 'Cheeta' ],
+    logHiToFriends: function () {
+        'use strict';
+        this.friends.forEach(function (friend) {
+            // 这里的“this”是undefined
+            console.log(this.name+' says hi to '+friend);
+        });
+    }
+}
+调用 logHiToFriends 会产生错误：
+
+> jane.logHiToFriends()
+TypeError: Cannot read property 'name' of undefined
+```
+
+有两种方法修复这问题。
+
+### 将this存储在不同的变量。
+```
+logHiToFriends: function () {
+    'use strict';
+    var that = this;
+    this.friends.forEach(function (friend) {
+        console.log(that.name+' says hi to '+friend);
+    });
+}
+
+```
+### forEach的第二个参数允许提供this值。
+
+```
+logHiToFriends: function () {
+    'use strict';
+    this.friends.forEach(function (friend) {
+        console.log(this.name+' says hi to '+friend);
+    }, this);
+}
+```
+
+遗漏点
+object.keys(obj),返回一个数组，包含指定对象的所有自有可遍历（own enumerable）属性的名称。
+
+Ajax 同步发生  window.open() 会发生,异步不会
+
+文档中插入纯文本的标准方法:  Node.textContent
+
+```
+0 === false
+false
+
+0 == false
+true
+
+'' == false
+true
+
+1 == true
+true
+
+1 === true
+false
+
+2 == true
+false
+
+NaN === NaN
+false
+
+NaN == NaN
+false
+
+undefined === undefined
+true
+
+null === null
+true
+
+null === undefined
+false
+
+null == undefined
+true
+
+var de = new Date()
+de instanceof Date  //true
+de instanceof Object //true
+typeof de  //"object"
+
+var fun = function() {}
+fun instanceof Function //true
+fun instanceof Object    //true
+typeof fun  //"function"
+
+funtion E() {}
+var e = new E()
+e instanceof Object //true
+e instanceof Function //false
+E instanceof Function //true
+E instanceof Object //true
+Object.isPrototypeOf(e) //false
+Object.prototype.isPrototypeOf(e) //true
+Object.prototype.isPrototypeOf(E) //true
+function EE() {}
+EE.prototype = new E()
+E.isPrototypeOf(EE) //false
+E.prototype.isPrototypeOf(EE) //false
+var ee = new EE()
+E.prototype.isPrototypeOf(ee) //true
+E.isPrototypeOf(ee) //false
+
+isPrototype 是当前元素往下的原型链查找
+
+function A() {}
+function A() {this.aa = 'sd'}
+A.hasOwnProperty('aa’) //false
+var aa = new A()
+aa.hasOwnProperty('aa’) //true
+A.aaa = 'type'
+A.hasOwnProperty('aaa’) //true
+
+```
+
+
+一行代码学js  (微博)
+
+```
+[].forEach.call($ $(""),function(a){
+a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)
+})
+```
+
+正则
+```
+reg.text(str)          return boolen
+reg.exec(str)         return array    (只是返回一个数组，只有一个元素,跟全局无关)注意其lastIndex属性
+str.match(reg)      return array
+str.search()
+str.split()
+str.replace()
+```
+类数组转换为数组
+Array.prototype.slice.call()
+原型继承时,基类里面有参数转化为自身属性时,可以在子类的构造函数里面使用call方法将基类里面的参数属性引入过来,也可以直接new的时候把参数转换为实参引入,但两者均可以继承,只是未定义
+```
+1.
+function Parent (arg) {this.arg = arg}
+Parent.prototype = {
+     constructor: Parent,
+     ccc: 'ccc'
+}
+
+function Child () {
+     Parent.call(this,'test')
+}
+
+Child.prototype.constructor = Child;
+var children = new Child();
+children.arg === 'test' // true
+children.ccc === 'ccc'  //false
+
+
+2.
+function Parent (arg) {this.arg = arg}
+Parent.prototype = {
+     constructor: Parent,
+     ccc: 'ccc'
+}
+function Child () {}
+Child.prototype = new Parent(’test');
+Child.prototype.constructor = Child;
+var children = new Child();
+children.arg === ’test’ // true
+children.ccc === 'ccc' //true
+```
+累加,累减其实是对变量的赋值操作
+i++返回的是自增之前的值，++i返回的则是自增后的值。
+如：
+var i = 1;
+var a = i++;  //a = 1;  此时i为2，但赋给a的是1
+var b = ++i;  //b = 3
+
+requireJs  -------->  AMD
+seajs  -----------> CMD
+
+switch用的是===进行判断
+
+js 获取元素的样式
+
+```
+window.getComputedStyle(document.getElementById('test'),null).getPropertyValue('display'));
+```
+```
+var obj = {
+dom: {
+a:1,
+b: this
+}
+}
+//这里的this指代window
+
+var obj = {
+dom: {
+a:1,
+b:function () { this}
+}
+}
+
+//这里的this指代{a:1,b: function() {this}} 对象
+```
+
+1. 每次调用then都会返回一个新创建的promise对象
+2. promise中尽量使用链式调用,
+3. js 三元操作符里面不能使用return

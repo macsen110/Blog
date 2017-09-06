@@ -21,6 +21,7 @@
 7. [js模块化](../../issues/13)
 8. [xhr](../../issues/11)
 9. [js 面向对象开发](../../issues/12)
+10. [immutableJs](../../issues/25)
 ### nodeJs
 
 1. [nodeJs Note](../../issues/16)

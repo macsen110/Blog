@@ -208,5 +208,163 @@ CSS3时代，flex子项也支持z-index，使得我们面对的情况比以前�
 
 
 
+css动画参数翻译
 
+transition
+
+transition 里面时间参数,第一个为
+transition-duration,
+
+第二个为transition-delay
+
+order不能变
+
+delay的真正意义在于，它指定了动画发生的顺序，使得多个不同的transition可以连在一起，形成复杂效果。
+
+transition: <property> <duration> <timing-function> <delay>;
+
+（1）linear：匀速
+
+（2）ease-in：加速
+
+（3）ease-out：减速
+
+（4）cubic-bezier函数：自定义速度模式(贝塞尔曲线)
+
+animation
+
+- animation-name: as specified
+- animation-duration: (custom time)
+- animation-timing-function: (ease, linear,step-start, steps,cubic-bezier)
+
+- animation-delay: (custom time)
+- animation-direction: as specified
+- animation-iteration-count: (custom number,infinite)
+- animation-fill-mode: as specified
+- animation-play-state: as specified
+
+Formal syntax: `<single-animation-name> || <time> || <timing-function> || <time> || <single-animation-iteration-count> || <single-animation-direction> || <single-animation-fill-mode> || <single-animation-play-state>`
+
+animation-direction:
+
+normal
+>The animation should play forward each cycle. In other words, each time the animation cycles, the animation will reset to the beginning state and start over again. This is the default animation direction setting.
+
+alternate
+>The animation should reverse direction each cycle. When playing in reverse, the animation steps are performed backward. In addition, timing functions are also reversed; for example, an ease-in animation is replaced with an ease-out animation when played in reverse. The count to determine if it is an even or an odd iteration starts at one.(0-100)
+
+reverse
+> The animation plays backward each cycle. Each time the animation cycles, the animation resets to the end state and start over again.(100-0)
+alternate-reverse
+> The animation plays backward on the first play-through, then forward on the next, then continues to alternate. The count to determinate if it is an even or an odd iteration starts at one.
+
+animation-fill-mode:
+> The animation-fill-mode CSS property specifies how a CSS animation should apply styles to its target before and after it is executing.
+none
+The animation will not apply any styles to the target before or after it is executing.
+
+forwards
+> The target will retain the computed values set by the last keyframe encountered during execution. The last keyframe encountered depends on the value of animation-direction and animation-iteration-count:
+
+backwards
+>The animation will apply the values defined in the first relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period. The first relevant keyframe depends of the value of animation-direction:
+both
+The animation will follow the rules for both forwards and backwards, thus extending the animation properties in both directions.
+
+infinite关键字，可以让动画无限次播放。也可以指定动画具体播放的次数，比如3次。
+
+steps:n  表明动画过渡需要n步
+
+cubic-bezier
+
+css 伪类和伪元素
+
+伪类和伪元素的根本区别在于：它们是否创造了新的元素(抽象)。从我们模仿其意义的角度来看，如果需要添加新元素加以标识的，就是伪元素，反之，如果只需要在既有元素上添加类别的，就是伪类。
+
+优先级区分:除了否定伪类的特殊规定外，分开各自作为真正的类和元素计算。
+
+元素的BFC特性与自适应布局
+
+块状元素的流体
+
+块状元素随着margin, padding,
+
+ border的出现，其可用宽度自动跟着减小，
+
+形成了自适应效果。就像放在容器中的水流一样，内容区域会随着margin, padding,
+border的出现自动填满剩余空间，这就是块状元素的流体特性。
+
+display:box,display:flex两者都是表示弹性布局,display:box  2009提出的用法，flex是它的增强版
+
+目前某些移动端的浏览器因为操作系统只支持display:-webkit-box;并且还不支持多行显示
+
+低版本浏览器下必须指定flex item 的display:block
+在flex box中-webkit-box版本下,给其子item添加{width: 1%},可解决容器溢出的情况
+
+css3 中currentColor 类似一个变量值为当前字体颜色(可用在hover当前元素的状态切换等)
+
+问题:
+低版本下如何能强制不让其伸缩
+
+小tip:CSS计数器+伪类实现数值动态计算与呈现
+
+“使用CSS(Unicode字符)让inline水平元素换行”
+grunt svg sprite
+
+绝对定位元素 margin:0垂直居中
+
+box-shadow
+none | `[inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]`
+
+大部分的回流将导致页面的重新渲染。
+伪元素 :before, :after 设置属性值的时候必不可少content属性
+
+csss 可继承属性 ，不可继承属性
+
+css 技巧:
+
+选中连续的几个元素
+```
+ol li:nth-child(n+7):nth-child(-n+14) {
+  background: lightpink;
+}
+/** Or Safari Way **/
+ol li:nth-child(-n+14):nth-child(n+7) {
+  background: lightpink;
+}
+
+outline-offset属性，在这个属性中，你可以设置默认线框的距离
+input {
+    outline-offset: 4px ;
+}
+```
+
+css 中的数量查询
+
+1. :only-child和:only-of-type都可以选择只有一个子元素。
+
+2. not 配合查询,取反:not(only-child)
+
+3. :nth-last-child(n)选择器，可以从后面开始遍历n个参数。也就是倒数第n个
+
+4. 多层伪类选择器，在原选择器基础上添加:first-child来做数量的过滤:nth-last-child(6):first-child
+
+5. :nth-last-child(6):first-child可以选择到第一个，而:nth-last-child(6):first-child ~ li可以选择到第2~6个li。如此一来，将这两个选择器组合在一起，就可以选择只有6个li的列表
+
+6. 和:nth-last-child()有一个刚好相反的选择器:nth-child()，其也可以添加相应的参数，比如n或者n + [整数]。例如:nth-child(n + 6)会选择列表中第六个li后所有li(包括第6个)，nth-last-child(n + 6)。:nth-last-child(n + 6)将会从列表的中的倒数第六个li开始计算，直到没有匹配的li停止（都是递增）
+
+7. 数小于或等于N
+:nth-last-child(-n + 6)从每个列表中倒数第一个一直选择倒数第六个li。
+
+8. 与nth-of-type 比较，重在理解type这个词,比较限制筛选的类型
+比如p:nth-child(2) {}，p: nth-of-type(2) 前者只会对父标签的第二个子元素且子元素是p,
+后者会对第二个p标签起作用,不管第二个p标签在何处
+
+三.   background-size 可以设置多个背景图,值以‘,’区分
+eg: background-size: 10px auto, 20px auto
+
+四.当给元素设定transform时会产生层叠,而其相邻元素仍会按照之前正常文档流显示,不会受到变形元素的影响
+
+五.max-width: less than or equal
+min-width greater than or equal
 
