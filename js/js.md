@@ -377,5 +377,5 @@ b:function () { this}
 ```
 
 1. 每次调用then都会返回一个新创建的promise对象
-2. promise中尽量使用链式调用,
+2. promise中尽量使用链式调用,一旦应用了promise，不管函数内部有没有异步(ajax, setTimeout, setInterval)它都是异步的
 3. js 三元操作符里面不能使用return
