@@ -23,20 +23,31 @@ cors ajax 跨域请求时,需要添加(包括fetch)
     crossDomain: true
 
 
-后端处理
+跨域请求并携带cookie后端处理
 
-res.header("Access-Control-Allow-Origin", "http://10.6.26.38:9001");
+res.header("Access-Control-Allow-Origin", "http://dev.macsen318.com:9000");
 res.header("Access-Control-Allow-Credentials", true);
-
+res.header("Access-Control-Allow-Headers", "Origin,No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With, userId, token");
+res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE"); //
+(后端对于客户端cookie的读取操作还要注意是否是同域(根据客户端cookie存储域名))
 或者
 
 nginx 上添加
 
-    add_header Access-Control-Allow-Origin http://10.6.26.38:9002;
-    add_header Access-Control-Allow-Credentials true;
+add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+add_header 'Access-Control-Allow-Credentials' 'true' always;
+add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With' always;
+
+或者nginx上面
+针对请求的接口路径来反向代理  proxy_pass http://localhsot:3000;会带有客户端存储的cookie
+
 
 本质上 Access-Control-Allow-Origin * 代表跨域允许,但是要通过客户端传cookie到后端,
 是需要有一个指定的地址和端口号
+
+
+
 
 jsonp
 

@@ -58,3 +58,4 @@
 
 1. HTML5还允许通过正则表达式自定义输入的字符,例如: `<input type="text" pattern="[0-9]*">`
 2. aria-hidden="true" 图标的可访问性,能够通过被辅助设备识别,帮助残障人士更好的访问网站。
+3. form获取action,默认会带有url全拼
