@@ -16,6 +16,7 @@ npm 5.0注意问题
 1.npm publish 命令 
         修改完package.json version字段,
         使用 npm adduser && npm publish --update-readme 就可以强推到npm registry
+        npm publish --registry http://registry.npmjs.org 指定操作的源
 
 2.npm update命令
 >5.0以后会生成package-lock.json 会使npm update命令 失效,并不会强更新
