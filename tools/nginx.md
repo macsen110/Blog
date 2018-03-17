@@ -447,3 +447,8 @@ server {
  
 }
 ```
+
+openssl s_client -connect 127.0.0.1:443 -no_ticket -servername bit.dazhifund.com
+测试ssl 中的问题, 
+1.环境中是否安装了openssl
+2.openssl 版本 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
