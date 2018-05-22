@@ -425,7 +425,7 @@ server {
         if ($invalid_referer){
             rewrite ^/ http://www.lyblog.net/images/default.jpg;
         }
-    }
+    }·
  
 }
 ```

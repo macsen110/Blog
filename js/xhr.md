@@ -93,6 +93,7 @@ router.get('/jsonp', (req, res, next) => {
 
 
 二. Ajax 以及表单提交(浏览器提交支持的数据格式)
+Content-type: 是浏览器对请求体的格式的约定
 ---
 
  * x-www-form-urlencoded
@@ -121,7 +122,7 @@ router.get('/jsonp', (req, res, next) => {
 
  * form-data
 
- 表单提交 设置enctype='multipart/form-data'
+原生表单提交 设置enctype='multipart/form-data'
 AJAX 中不用设置,form-data格式会自动改变请求头部为 Content-type multipart/form-data
 
 ps：一个表单有文件上传,最好使用form-data格式
@@ -129,8 +130,11 @@ ps：一个表单有文件上传,最好使用form-data格式
 
 * text/plain 纯文本
 
-* text/xml XML
+* text/xml XML 请求体为xml
 
-请求体为xml
+三. responseType
 
+XMLHttpRequest.responseType
+an enumerated string value specifying the type of data contained in the response.
 
+对应的jq 中ajax dataType属性 
