@@ -79,3 +79,7 @@ ___
 # 暂时将未提交的变化移除，稍后再移入
     $ git stash
     $ git stash pop
+
+# 解决二进制文件冲突
+    $ git checkout --theirs -- path/to/conflicted-file.jpg
+    $ git checkout --ours -- path/to/conflicted-file.jpg
