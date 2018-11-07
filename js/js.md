@@ -249,6 +249,21 @@ false
 null == undefined
 true
 
+undefined == null //true
+
+undefined == 0 //false
+
+undefined == '' //false
+
+undefined == false //false
+
+[] == false //true
+
+null == 0 //false
+
+null == '' //false
+
+
 var de = new Date()
 de instanceof Date  //true
 de instanceof Object //true
