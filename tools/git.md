@@ -291,3 +291,6 @@ $ git push --force origin
 
 
 $ git push origin --tags
+
+
+git log -p filename
