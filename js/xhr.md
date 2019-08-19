@@ -138,3 +138,11 @@ XMLHttpRequest.responseType
 an enumerated string value specifying the type of data contained in the response.
 
 对应的jq 中ajax dataType属性 
+
+
+四. cookie 和 session 区别
+1. cookie和session的共同之处在于：cookie和session都是用来跟踪浏览器用户身份的会话方式。
+2. cookie 和session的区别是：cookie数据保存在客户端，session数据保存在服务器端。
+
+
+浏览器application 选项下, cookie 只展示当前域名和根域名的key-value值
