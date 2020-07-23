@@ -463,3 +463,42 @@ server {
 openssl s_client -connect 127.0.0.1:443 -no_ticket -servername bit.dazhifund.com
 测试 ssl 中的问题, 1.环境中是否安装了 openssl
 2.openssl 版本 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+# proxy_pass $value 最后 '/' 只对 $vlaue 跟路径起作用
+
+```
+server {
+  server_name a.com;
+  //A
+  location /api {
+    proxy_pass b.com;
+  }
+  a.com/api/aaa === b.com/api/aaa
+
+  //B
+
+  location /api {
+    proxy_pass b.com/;
+
+  }
+  a.com/api/aaa === b.com/aaa
+
+
+  //C
+
+  location /api {
+    proxy_pass b.com/test;
+  }
+
+  a.com/api/aaa === b.com/test/aaa;
+
+
+  //D
+
+  location /api {
+    proxy_pass b.com/test/
+  }
+  a.com/api/aaa === b.com/test/aaa;
+}
+
+```
